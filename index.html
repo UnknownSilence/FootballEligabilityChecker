@@ -5,13 +5,418 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Eligability Checker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
-    <div>
-        <h1>Football Eligability Checker</h1>
-        <h2>You are....</h2>
-        <p id="eligableLabel"></p>
-    </div>
+<!-- Image and text -->
+
+<body class="bg-light">
+        <div class="container">
+                
+          
+                <div class="row">
+                  <div class="col-md-8 order-md-8 mb-6">
+                    <h1 class="d-flex justify-content-between align-items-center mb-3">
+                      <span class="text-muted">NCAA Checker</span>
+                      <span class="badge badge-secondary badge-pill">3</span>
+                    </h1>
+                    
+          
+                    <hr class="mb-12">
+                    <div class="row">
+                            <h3 class="d-flex justify">English Courses</h3>
+                    </div>
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label for="country">Course Name</label>
+                          <select class="custom-select d-block w-100" id="country" required>
+                            <option value="">Choose...</option>
+                            <option>English 1</option>
+                            <option>English 2</option>
+                            <option>English 3</option>
+                            <option>English 4</option>
+                            <option>Journalism</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please select a valid course.
+                          </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <label for="state">Course Type</label>
+                          <select class="custom-select d-block w-100" id="state" required>
+                            <option value="">Choose...</option>
+                            <option>Regular</option>
+                            <option>AP/Pre-AP/GT</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please provide a valid state.
+                          </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <label for="zip">Semester 1 Grade</label>
+                          <input type="text" class="form-control" id="zip" placeholder="" required>
+                          <div class="invalid-feedback">
+                            Zip code required.
+                          </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                                <label for="zip">Semester 2 Grade</label>
+                                <input type="text" class="form-control" id="zip" placeholder="" required>
+                                <div class="invalid-feedback">
+                                  Zip code required.
+                                </div>
+                              </div>
+                      </div>
+
+                      <hr class="mb-4">
+
+                      <div class="row">
+                            <div class="col-md-6 mb-3">
+                              <label for="country">Course Name</label>
+                              <select class="custom-select d-block w-100" id="country" required>
+                                <option value="">Choose...</option>
+                                <option>English 1</option>
+                                <option>English 2</option>
+                                <option>English 3</option>
+                                <option>English 4</option>
+                                <option>Journalism</option>
+                              </select>
+                              <div class="invalid-feedback">
+                                Please select a valid course.
+                              </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                              <label for="state">Course Type</label>
+                              <select class="custom-select d-block w-100" id="state" required>
+                                <option value="">Choose...</option>
+                                <option>Regular</option>
+                                <option>AP/Pre-AP/GT</option>
+                              </select>
+                              <div class="invalid-feedback">
+                                Please provide a valid state.
+                              </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                              <label for="zip">Semester 1 Grade</label>
+                              <input type="text" class="form-control" id="zip" placeholder="" required>
+                              <div class="invalid-feedback">
+                                Zip code required.
+                              </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                    <label for="zip">Semester 2 Grade</label>
+                                    <input type="text" class="form-control" id="zip" placeholder="" required>
+                                    <div class="invalid-feedback">
+                                      Zip code required.
+                                    </div>
+                                  </div>
+                          </div>
+
+                          <hr class="mb-4">
+
+                      <div class="row">
+                            <div class="col-md-6 mb-3">
+                              <label for="country">Course Name</label>
+                              <select class="custom-select d-block w-100" id="country" required>
+                                <option value="">Choose...</option>
+                                <option>English 1</option>
+                                <option>English 2</option>
+                                <option>English 3</option>
+                                <option>English 4</option>
+                                <option>Journalism</option>
+                              </select>
+                              <div class="invalid-feedback">
+                                Please select a valid course.
+                              </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                              <label for="state">Course Type</label>
+                              <select class="custom-select d-block w-100" id="state" required>
+                                <option value="">Choose...</option>
+                                <option>Regular</option>
+                                <option>AP/Pre-AP/GT</option>
+                              </select>
+                              <div class="invalid-feedback">
+                                Please provide a valid state.
+                              </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                              <label for="zip">Semester 1 Grade</label>
+                              <input type="text" class="form-control" id="zip" placeholder="" required>
+                              <div class="invalid-feedback">
+                                Zip code required.
+                              </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                    <label for="zip">Semester 2 Grade</label>
+                                    <input type="text" class="form-control" id="zip" placeholder="" required>
+                                    <div class="invalid-feedback">
+                                      Zip code required.
+                                    </div>
+                                  </div>
+                          </div>
+
+                          <hr class="mb-4">
+
+                      <div class="row">
+                            <div class="col-md-6 mb-3">
+                              <label for="country">Course Name</label>
+                              <select class="custom-select d-block w-100" id="country" required>
+                                <option value="">Choose...</option>
+                                <option>English 1</option>
+                                <option>English 2</option>
+                                <option>English 3</option>
+                                <option>English 4</option>
+                                <option>Journalism</option>
+                              </select>
+                              <div class="invalid-feedback">
+                                Please select a valid course.
+                              </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                              <label for="state">Course Type</label>
+                              <select class="custom-select d-block w-100" id="state" required>
+                                <option value="">Choose...</option>
+                                <option>Regular</option>
+                                <option>AP/Pre-AP/GT</option>
+                              </select>
+                              <div class="invalid-feedback">
+                                Please provide a valid state.
+                              </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                              <label for="zip">Semester 1 Grade</label>
+                              <input type="text" class="form-control" id="zip" placeholder="" required>
+                              <div class="invalid-feedback">
+                                Zip code required.
+                              </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                    <label for="zip">Semester 2 Grade</label>
+                                    <input type="text" class="form-control" id="zip" placeholder="" required>
+                                    <div class="invalid-feedback">
+                                      Zip code required.
+                                    </div>
+                                  </div>
+                          </div>
+
+                          <hr class="mb-12">
+                    <div class="row">
+                            <h3 class="d-flex justify">Math Courses</h3>
+                    </div>
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label for="country">Course Name</label>
+                          <select class="custom-select d-block w-100" id="country" required>
+                            <option value="">Choose...</option>
+                            <option>Algebra 1</option>
+                            <option>Algebra 2</option>
+                            <option>Algebra 3</option>
+                            <option>Pre-Calculus</option>
+                            <option>Geometry</option>
+                            <option>AB Calculus</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please select a valid course.
+                          </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <label for="state">Course Type</label>
+                          <select class="custom-select d-block w-100" id="state" required>
+                            <option value="">Choose...</option>
+                            <option>Regular</option>
+                            <option>AP/Pre-AP/GT</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please provide a valid state.
+                          </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                          <label for="zip">Semester 1 Grade</label>
+                          <input type="text" class="form-control" id="zip" placeholder="" required>
+                          <div class="invalid-feedback">
+                            Zip code required.
+                          </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                                <label for="zip">Semester 2 Grade</label>
+                                <input type="text" class="form-control" id="zip" placeholder="" required>
+                                <div class="invalid-feedback">
+                                  Zip code required.
+                                </div>
+                              </div>
+                      </div>
+
+                      <hr class="mb-4">
+
+                      <div class="row">
+                            <div class="col-md-6 mb-3">
+                              <label for="country">Course Name</label>
+                              <select class="custom-select d-block w-100" id="country" required>
+                                <option value="">Choose...</option>
+                                <option>Algebra 1</option>
+                                <option>Algebra 2</option>
+                                <option>Algebra 3</option>
+                                <option>Pre-Calculus</option>
+                                <option>Geometry</option>
+                                <option>AB Calculus</option>
+                              </select>
+                              <div class="invalid-feedback">
+                                Please select a valid course.
+                              </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                              <label for="state">Course Type</label>
+                              <select class="custom-select d-block w-100" id="state" required>
+                                <option value="">Choose...</option>
+                                <option>Regular</option>
+                                <option>AP/Pre-AP/GT</option>
+                              </select>
+                              <div class="invalid-feedback">
+                                Please provide a valid state.
+                              </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                              <label for="zip">Semester 1 Grade</label>
+                              <input type="text" class="form-control" id="zip" placeholder="" required>
+                              <div class="invalid-feedback">
+                                Zip code required.
+                              </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                    <label for="zip">Semester 2 Grade</label>
+                                    <input type="text" class="form-control" id="zip" placeholder="" required>
+                                    <div class="invalid-feedback">
+                                      Zip code required.
+                                    </div>
+                                  </div>
+                          </div>
+
+                          <hr class="mb-4">
+
+                      <div class="row">
+                            <div class="col-md-6 mb-3">
+                              <label for="country">Course Name</label>
+                              <select class="custom-select d-block w-100" id="country" required>
+                                <option value="">Choose...</option>
+                                <option>Algebra 1</option>
+                                <option>Algebra 2</option>
+                                <option>Algebra 3</option>
+                                <option>Pre-Calculus</option>
+                                <option>Geometry</option>
+                                <option>AB Calculus</option>
+                              </select>
+                              <div class="invalid-feedback">
+                                Please select a valid course.
+                              </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                              <label for="state">Course Type</label>
+                              <select class="custom-select d-block w-100" id="state" required>
+                                <option value="">Choose...</option>
+                                <option>Regular</option>
+                                <option>AP/Pre-AP/GT</option>
+                              </select>
+                              <div class="invalid-feedback">
+                                Please provide a valid state.
+                              </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                              <label for="zip">Semester 1 Grade</label>
+                              <input type="text" class="form-control" id="zip" placeholder="" required>
+                              <div class="invalid-feedback">
+                                Zip code required.
+                              </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                    <label for="zip">Semester 2 Grade</label>
+                                    <input type="text" class="form-control" id="zip" placeholder="" required>
+                                    <div class="invalid-feedback">
+                                      Zip code required.
+                                    </div>
+                                  </div>
+                          </div>
+
+                          
+
+                      <hr class="mb-4">
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="same-address">
+                        <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="save-info">
+                        <label class="custom-control-label" for="save-info">Save this information for next time</label>
+                      </div>
+                      <hr class="mb-4">
+          
+                      <h4 class="mb-3">Payment</h4>
+          
+                      <div class="d-block my-3">
+                        <div class="custom-control custom-radio">
+                          <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                          <label class="custom-control-label" for="credit">Credit card</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                          <label class="custom-control-label" for="debit">Debit card</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+                          <label class="custom-control-label" for="paypal">Paypal</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6 mb-3">
+                          <label for="cc-name">Name on card</label>
+                          <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                          <small class="text-muted">Full name as displayed on card</small>
+                          <div class="invalid-feedback">
+                            Name on card is required
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                          <label for="cc-number">Credit card number</label>
+                          <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                          <div class="invalid-feedback">
+                            Credit card number is required
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-3 mb-3">
+                          <label for="cc-expiration">Expiration</label>
+                          <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                          <div class="invalid-feedback">
+                            Expiration date required
+                          </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                          <label for="cc-expiration">CVV</label>
+                          <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                          <div class="invalid-feedback">
+                            Security code required
+                          </div>
+                        </div>
+                      </div>
+                      <hr class="mb-4">
+                      <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+                    </form>
+                  </div>
+                </div>
+          
+                <footer class="my-5 pt-5 text-muted text-center text-small">
+                  <p class="mb-1">&copy; 2017-2018 Company Name</p>
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><a href="#">Privacy</a></li>
+                    <li class="list-inline-item"><a href="#">Terms</a></li>
+                    <li class="list-inline-item"><a href="#">Support</a></li>
+                  </ul>
+                </footer>
+              </div>
+          
     <script src="./main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
