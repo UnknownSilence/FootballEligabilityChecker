@@ -146,7 +146,7 @@ ADVANCED QUANTITATIVE REASONING
 */
 
 
-englishCatalog = [
+var englishCatalog = [
 "APENGLAN HP",
 "APENGLIT HP",
 "CREAT WR AD",
@@ -173,7 +173,7 @@ englishCatalog = [
 "PUBSPKG 3"
 ]
 
- mathCatalog = ["ALG 1",
+var mathCatalog = ["ALG 1",
 "ALG 1 PREAP",
 "ALG 1 PREAP-GT",
 "ALG 2",
@@ -200,8 +200,9 @@ englishCatalog = [
 
 var eligable = false // initialize value at default of false until proven true
 
-document.addEventListener('load', function() {
-    if (checkEligability(satScore, actScore, scienceSem1Grades, scienceSem2Grades) == true) {
+window.addEventListener("load", function(){
+    // ....
+   /* if (checkEligability(satScore, actScore, scienceSem1Grades, scienceSem2Grades) == true) {
         let label = document.getElementById('eligableLabel')
         label.textContent = "ELIGABLE"
     }
@@ -209,12 +210,24 @@ document.addEventListener('load', function() {
         let label = document.getElementById('eligableLabel')
         label.textContent = "NOT ELIGABLE"
     }
+*/
+var selectCourseEnglish1 = document.getElementById("selectCourseEnglish1"); 
+
+
+for(var i = 0; i < englishCatalog.length; i++) {
+    var opt = englishCatalog[i];
+    var el = document.createElement("option");
+    el.textContent = opt;
+    el.value = opt;
+    selectCourseEnglish1.appendChild(el);
+}
+console.log("debug works")
+
 })
 
 
 
-
-
+/*
 function checkEligability(sat, act, scisem1grds, scisem2grds,) {
     if (scisem1grds.length < 4 || scisem2grds.length < 4) {
         console.log("You need more science courses.")
@@ -224,6 +237,7 @@ function checkEligability(sat, act, scisem1grds, scisem2grds,) {
     }
     // check for num of class minimums here
 }
+*/
 
 
 
