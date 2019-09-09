@@ -1,36 +1,23 @@
 var satScore = 1250 //test
 var actScore = 24 // test
-
 var scienceSem1Grades = [90, 82, 99, 100] //test
 var scienceSem2Grades = [60, 80, 89, 91] //test
-
 var englishSem1Grades = [98, 78, 85, 90] //test
 var englishSem2Grades = [90, 87, 76, 99] //test
-
 var otherSem1Grades = [99, 96, 90, 100] //test
 var otherSem2Grades = [89, 92, 98, 86] //test
-
 var mathSem1Grades = [90, 98, 87] //test
 var mathSem2Grades = [90, 87, 76] //test
-
-var  completedTenCheck = false //test
-
+var completedTenCheck = false //test
+var eligable = false // initialize value at default of false until proven true
 /*
-
 requirments -
-
 Min: 2.3 gpa
-
 16 core courses - 4 ENG, 3 MATH, 2 SCI, 1 ADDITIONALcore, 2 SOCIALSCI, 4 ADDITIONALelective
-
 ACT/SAT matches gpa
 -----
-
 */
-
-
-var englishCatalog = [
-    "APENGLAN HP",
+var englishCatalog = ["APENGLAN HP",
     "APENGLIT HP",
     "CREAT WR AD",
     "DEBATE 1",
@@ -56,9 +43,7 @@ var englishCatalog = [
     "PUBSPKG 2",
     "PUBSPKG 3"
 ]
-
-var mathCatalog = [
-    "ADVANCED QUANTITATIVE REASONING",
+var mathCatalog = ["ADVANCED QUANTITATIVE REASONING",
     "ALG 1",
     "ALG 1 PREAP",
     "ALG 1 PREAP-GT",
@@ -85,9 +70,7 @@ var mathCatalog = [
     "PRE CAL PREIB",
     "STATISTICS"
 ]
-
-var naturalSciCatalog = [
-    "ANAT & PHY AD",
+var naturalSciCatalog = ["ANAT & PHY AD",
     "ANATOMY & PHYSIOLOGY DUAL CREDIT",
     "AP BIO",
     "AP ENVIR",
@@ -127,9 +110,7 @@ var naturalSciCatalog = [
     "PHYSICS AD",
     "PHYSICS PREAP"
 ]
-
-var socialSciCatalog = [
-    "APMACRO",
+var socialSciCatalog = ["APMACRO",
     "APMICRO",
     "APUSGOVT",
     "APUSHIST",
@@ -158,9 +139,7 @@ var socialSciCatalog = [
     "W HIST",
     "W HIST AP"
 ]
-
-var additionalCoreCatalog = [
-    "CULTURAL & LINGUISTIC TOPICS IN LATIN",
+var additionalCoreCatalog = ["CULTURAL & LINGUISTIC TOPICS IN LATIN",
     "FR-LANG AP",
     "FRENCH 1",
     "FRENCH 1 PIB",
@@ -220,13 +199,23 @@ var additionalCoreCatalog = [
     "SPANLANG AP",
     "THEORY OF KNOWLEDGE IB+"
 ]
-
-
-var eligable = false // initialize value at default of false until proven true
-
+// temporary on-load script execution
 window.addEventListener("load", function () {
     // ....
-    /* if (checkEligability(satScore, actScore, scienceSem1Grades, scienceSem2Grades) == true) {
+
+
+    /*
+===================================================================================================================================================
+===================================================================================================================================================
+===================================================================================================================================================
+===================================================================================================================================================
+===================================================================================================================================================
+===================================================================================================================================================
+===================================================================================================================================================
+===================================================================================================================================================
+===================================================================================================================================================
+===================================================================================================================================================
+if (checkEligability(satScore, actScore, scienceSem1Grades, scienceSem2Grades) == true) {
         let label = document.getElementById('eligableLabel')
         label.textContent = "ELIGABLE"
     }
@@ -235,25 +224,15 @@ window.addEventListener("load", function () {
         label.textContent = "NOT ELIGABLE"
     }
 */
-
-
-    /*
-
-    =======================================================================================
-    ---------------------------------------------------------------------------------------
-
-    Populate English Dropdown Menus
-
-    =======================================================================================
-    ---------------------------------------------------------------------------------------
-
-
-    */
-
-
+    /* 
+=======================================================================================
+---------------------------------------------------------------------------------------
+Populate English Dropdown Menus
+=======================================================================================
+---------------------------------------------------------------------------------------
+*/
     // ===================================
     var selectCourseEnglish1 = document.getElementById("selectCourseEnglish1");
-
     for (let i = 0; i < englishCatalog.length; i++) {
         let opt = englishCatalog[i];
         let el = document.createElement("option");
@@ -263,7 +242,6 @@ window.addEventListener("load", function () {
     }
     // ===================================
     var selectCourseEnglish2 = document.getElementById("selectCourseEnglish2");
-
     for (let i = 0; i < englishCatalog.length; i++) {
         let opt = englishCatalog[i];
         let el = document.createElement("option");
@@ -273,7 +251,6 @@ window.addEventListener("load", function () {
     }
     // ===================================
     var selectCourseEnglish3 = document.getElementById("selectCourseEnglish3");
-
     for (let i = 0; i < englishCatalog.length; i++) {
         let opt = englishCatalog[i];
         let el = document.createElement("option");
@@ -283,7 +260,6 @@ window.addEventListener("load", function () {
     }
     // ===================================
     var selectCourseEnglish4 = document.getElementById("selectCourseEnglish4");
-
     for (let i = 0; i < englishCatalog.length; i++) {
         let opt = englishCatalog[i];
         let el = document.createElement("option");
@@ -293,21 +269,14 @@ window.addEventListener("load", function () {
     }
     // ===================================
     /*
-
     =======================================================================================
     ---------------------------------------------------------------------------------------
-
     Populate Math Dropdown Menus
-
     =======================================================================================
     ---------------------------------------------------------------------------------------
-
-
     */
-
     // ===================================
     var selectCourseMath1 = document.getElementById("selectCourseMath1");
-
     for (let i = 0; i < mathCatalog.length; i++) {
         let opt = mathCatalog[i];
         let el = document.createElement("option");
@@ -317,7 +286,6 @@ window.addEventListener("load", function () {
     }
     // ===================================
     var selectCourseMath2 = document.getElementById("selectCourseMath2");
-
     for (let i = 0; i < mathCatalog.length; i++) {
         let opt = mathCatalog[i];
         let el = document.createElement("option");
@@ -327,7 +295,6 @@ window.addEventListener("load", function () {
     }
     // ===================================
     var selectCourseMath3 = document.getElementById("selectCourseMath3");
-
     for (let i = 0; i < mathCatalog.length; i++) {
         let opt = mathCatalog[i];
         let el = document.createElement("option");
@@ -336,26 +303,15 @@ window.addEventListener("load", function () {
         selectCourseMath3.appendChild(el);
     }
     // ===================================
-
-
-
-    // ===================================
     /*
-
     =======================================================================================
     ---------------------------------------------------------------------------------------
-
     Populate Science Dropdown Menus
-
     =======================================================================================
     ---------------------------------------------------------------------------------------
-
-
     */
-
     // ===================================
     var selectCourseScience1 = document.getElementById("selectCourseScience1");
-
     for (let i = 0; i < naturalSciCatalog.length; i++) {
         let opt = naturalSciCatalog[i];
         let el = document.createElement("option");
@@ -365,7 +321,6 @@ window.addEventListener("load", function () {
     }
     // ===================================
     var selectCourseScience2 = document.getElementById("selectCourseScience2");
-
     for (let i = 0; i < naturalSciCatalog.length; i++) {
         let opt = naturalSciCatalog[i];
         let el = document.createElement("option");
@@ -374,30 +329,15 @@ window.addEventListener("load", function () {
         selectCourseScience2.appendChild(el);
     }
     // ===================================
-
-
-
-
-
-
-    // ===================================
     /*
-
     =======================================================================================
     ---------------------------------------------------------------------------------------
-
     Populate Additioanl Core Courses Dropdown Menus
-
     =======================================================================================
     ---------------------------------------------------------------------------------------
-
-
     */
-
     // ===================================
     var selectCourseAdditionalCore1 = document.getElementById("selectCourseAdditionalCore1");
-
-
     // combo together all science, math, and english courses (core) for 1 dropdown
     for (let i = 0; i < englishCatalog.length; i++) {
         let opt = englishCatalog[i];
@@ -406,7 +346,6 @@ window.addEventListener("load", function () {
         el.value = opt;
         selectCourseAdditionalCore1.appendChild(el);
     }
-
     for (let i = 0; i < mathCatalog.length; i++) {
         let opt = mathCatalog[i];
         let el = document.createElement("option");
@@ -414,7 +353,6 @@ window.addEventListener("load", function () {
         el.value = opt;
         selectCourseAdditionalCore1.appendChild(el);
     }
-
     for (let i = 0; i < naturalSciCatalog.length; i++) {
         let opt = naturalSciCatalog[i];
         let el = document.createElement("option");
@@ -422,32 +360,16 @@ window.addEventListener("load", function () {
         el.value = opt;
         selectCourseAdditionalCore1.appendChild(el);
     }
-
-
-
     // ===================================
-
-
-
-
-
-        // ===================================
     /*
-
     =======================================================================================
     ---------------------------------------------------------------------------------------
-
     Populate Social Science Dropdown Menus
-
     =======================================================================================
     ---------------------------------------------------------------------------------------
-
-
     */
-
     // ===================================
     var selectCourseSocialSci1 = document.getElementById("selectCourseSocialSci1");
-
     for (let i = 0; i < socialSciCatalog.length; i++) {
         let opt = socialSciCatalog[i];
         let el = document.createElement("option");
@@ -457,7 +379,6 @@ window.addEventListener("load", function () {
     }
     // ===================================
     var selectCourseSocialSci2 = document.getElementById("selectCourseSocialSci2");
-
     for (let i = 0; i < socialSciCatalog.length; i++) {
         let opt = socialSciCatalog[i];
         let el = document.createElement("option");
@@ -466,23 +387,179 @@ window.addEventListener("load", function () {
         selectCourseSocialSci2.appendChild(el);
     }
     // ===================================
-
-
-
-
-
-
+    /*
+    =======================================================================================
+    ---------------------------------------------------------------------------------------
+    Populate Additioanl ANY Courses Dropdown Menus
+    =======================================================================================
+    ---------------------------------------------------------------------------------------
+    */
     // ===================================
-    
-
-
-
+    var selectCourseAdditionalAny1 = document.getElementById("selectCourseAdditionalAny1");
+    // combo together all science, math, and english courses (core) for 1 dropdown
+    for (let i = 0; i < additionalCoreCatalog.length; i++) {
+        let opt = additionalCoreCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalAny1.appendChild(el);
+    }
+    for (let i = 0; i < englishCatalog.length; i++) {
+        let opt = englishCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalAny1.appendChild(el);
+    }
+    for (let i = 0; i < mathCatalog.length; i++) {
+        let opt = mathCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalAny1.appendChild(el);
+    }
+    for (let i = 0; i < naturalSciCatalog.length; i++) {
+        let opt = naturalSciCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalAny1.appendChild(el);
+    }
+    for (let i = 0; i < socialSciCatalog.length; i++) {
+        let opt = socialSciCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalAny1.appendChild(el);
+    }
+    // ===================================
+    var selectCourseAdditionalAny2 = document.getElementById("selectCourseAdditionalAny2");
+    // combo together all science, math, and english courses (core) for 1 dropdown
+    for (let i = 0; i < additionalCoreCatalog.length; i++) {
+        let opt = additionalCoreCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalAny2.appendChild(el);
+    }
+    for (let i = 0; i < englishCatalog.length; i++) {
+        let opt = englishCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalAny2.appendChild(el);
+    }
+    for (let i = 0; i < mathCatalog.length; i++) {
+        let opt = mathCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalAny2.appendChild(el);
+    }
+    for (let i = 0; i < naturalSciCatalog.length; i++) {
+        let opt = naturalSciCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalAny2.appendChild(el);
+    }
+    for (let i = 0; i < socialSciCatalog.length; i++) {
+        let opt = socialSciCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalAny2.appendChild(el);
+    }
+    // ===================================
+    var selectCourseAdditionalAny3 = document.getElementById("selectCourseAdditionalAny3");
+    // combo together all science, math, and english courses (core) for 1 dropdown
+    for (let i = 0; i < additionalCoreCatalog.length; i++) {
+        let opt = additionalCoreCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalAny3.appendChild(el);
+    }
+    for (let i = 0; i < englishCatalog.length; i++) {
+        let opt = englishCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalAny3.appendChild(el);
+    }
+    for (let i = 0; i < mathCatalog.length; i++) {
+        let opt = mathCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalAny3.appendChild(el);
+    }
+    for (let i = 0; i < naturalSciCatalog.length; i++) {
+        let opt = naturalSciCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalAny3.appendChild(el);
+    }
+    for (let i = 0; i < socialSciCatalog.length; i++) {
+        let opt = socialSciCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalAny3.appendChild(el);
+    }
+    // ===================================
+    var selectCourseAdditionalAny4 = document.getElementById("selectCourseAdditionalAny4");
+    // combo together all science, math, and english courses (core) for 1 dropdown
+    for (let i = 0; i < additionalCoreCatalog.length; i++) {
+        let opt = additionalCoreCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalAny4.appendChild(el);
+    }
+    for (let i = 0; i < englishCatalog.length; i++) {
+        let opt = englishCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalAny4.appendChild(el);
+    }
+    for (let i = 0; i < mathCatalog.length; i++) {
+        let opt = mathCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalAny4.appendChild(el);
+    }
+    for (let i = 0; i < naturalSciCatalog.length; i++) {
+        let opt = naturalSciCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalAny4.appendChild(el);
+    }
+    for (let i = 0; i < socialSciCatalog.length; i++) {
+        let opt = socialSciCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalAny4.appendChild(el);
+    }
+    // ===================================
+    /*
+    ===================================================================================================================================================
+    ===================================================================================================================================================
+    ===================================================================================================================================================
+    ===================================================================================================================================================
+    ===================================================================================================================================================
+    ===================================================================================================================================================
+    ===================================================================================================================================================
+    ===================================================================================================================================================
+    ===================================================================================================================================================
+    ===================================================================================================================================================
+    */
 })
-
-
-
-
-
 /*
 function checkEligability(sat, act, scisem1grds, scisem2grds,) {
     if (scisem1grds.length < 4 || scisem2grds.length < 4) {
@@ -493,14 +570,8 @@ function checkEligability(sat, act, scisem1grds, scisem2grds,) {
     }
     // check for num of class minimums here
 }
-*/
-
-
-
-/*
 Organization Structure:
 ============================================
-
 SAT [] ACT []
 ============================================
 Science courses
@@ -528,10 +599,4 @@ Sem 1 [] Sem 2 []
 Sem 1 [] Sem 2 []
 Sem 1 [] Sem 2[]
 === {+ - Taken more? Add more courses}
-
-
-
-
-
-
 */
