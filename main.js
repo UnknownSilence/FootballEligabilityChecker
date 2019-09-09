@@ -13,6 +13,8 @@ var otherSem2Grades = [89, 92, 98, 86] //test
 var mathSem1Grades = [90, 98, 87] //test
 var mathSem2Grades = [90, 87, 76] //test
 
+var  completedTenCheck = false //test
+
 /*
 
 requirments -
@@ -22,124 +24,7 @@ Min: 2.3 gpa
 16 core courses - 4 ENG, 3 MATH, 2 SCI, 1 ADDITIONALcore, 2 SOCIALSCI, 4 ADDITIONALelective
 
 ACT/SAT matches gpa
-
-
-
-
-
-
-*/
-
-
-
-/*
-
-CATALOG
-=========
-
-ENGLISH COURSES:
-
-------
-APENGLAN HP
-APENGLIT HP
-CREAT WR AD
-DEBATE 1
-DEBATE 2
-DEBATE 3 AD
-ENG 1
-ENG 1 PIB
-ENG 1 PREAP
-ENG 1 PREAP-GT
-ENG 2
-ENG 2 PIB
-ENG 2 PREAP
-ENG 2 PREAP-GT
-ENG 2
-ENG 2 IB/SL
-ENG 4
-ENG 4 IB/HL
-ENGLISH 3 DUAL CREDIT
-IND ENG PREAP-GT
-JOUR 1
-PUBSPKG 1
-PUBSPKG 2
-PUBSPKG 3
-
-
 -----
-
-SOCIAL SCIENCE COURSES:
-
-------
-APMACRO
-APMICRO
-APUSGOVT
-APUSHIST
-CCP
-CORS&P
-ECO-FE
-EURO HIST AP
-GOVERNMENT DC
-GOVT
-HUMAN GEO AP
-IBHIST OF AM 1
-IBHIST OF AM 2
-MEXICAN AMERICAN STUDY
-PSY DC
-PSYCH
-PSYCHAP
-SOC
-SOC DC
-SPTSS
-SPTSS AFRICAN AMERICAN STUDY
-US HIST
-US HISTORY DC
-W GEO 
-W GEO PREAP
-W GEO PREAP-GT
-W HIST
-W HIST AP
-
-
-MATH COURSES:
-
-------
-ADVANCED QUANTITATIVE REASONING
-
-[]
-"ALG 1",
-"ALG 1 PREAP",
-"ALG 1 PREAP-GT",
-"ALG 2",
-"ALG 2 PREAP",
-"ALG 2 PREAP-GT",
-"APCALCAB",
-"APCALCBC",
-"ATSTATS",
-"COMPUTER SCIENCE AP",
-"GEOM",
-"GEOM PREAP",
-"IND MATH PREAP/GT",
-"IND ST - ADV MATH DEC MAKING",
-"IND STUDY - COLL ALG DC",
-"MATH METH HL/IB",
-"MATH ST SL/IB",
-"PRE CAL AD",
-"PRE CAL DUAL CREDIT",
-"PRE CAL PREAP",
-"PRE CAL PREAP-GT",
-"PRE CAL PREIB",
-"STATISTICS"
-]
-
-
------
-
-
------
-
-
-
 
 */
 
@@ -490,6 +375,105 @@ window.addEventListener("load", function () {
     }
     // ===================================
 
+
+
+
+
+
+    // ===================================
+    /*
+
+    =======================================================================================
+    ---------------------------------------------------------------------------------------
+
+    Populate Additioanl Core Courses Dropdown Menus
+
+    =======================================================================================
+    ---------------------------------------------------------------------------------------
+
+
+    */
+
+    // ===================================
+    var selectCourseAdditionalCore1 = document.getElementById("selectCourseAdditionalCore1");
+
+
+    // combo together all science, math, and english courses (core) for 1 dropdown
+    for (let i = 0; i < englishCatalog.length; i++) {
+        let opt = englishCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalCore1.appendChild(el);
+    }
+
+    for (let i = 0; i < mathCatalog.length; i++) {
+        let opt = mathCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalCore1.appendChild(el);
+    }
+
+    for (let i = 0; i < naturalSciCatalog.length; i++) {
+        let opt = naturalSciCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseAdditionalCore1.appendChild(el);
+    }
+
+
+
+    // ===================================
+
+
+
+
+
+        // ===================================
+    /*
+
+    =======================================================================================
+    ---------------------------------------------------------------------------------------
+
+    Populate Social Science Dropdown Menus
+
+    =======================================================================================
+    ---------------------------------------------------------------------------------------
+
+
+    */
+
+    // ===================================
+    var selectCourseSocialSci1 = document.getElementById("selectCourseSocialSci1");
+
+    for (let i = 0; i < socialSciCatalog.length; i++) {
+        let opt = socialSciCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseSocialSci1.appendChild(el);
+    }
+    // ===================================
+    var selectCourseSocialSci2 = document.getElementById("selectCourseSocialSci2");
+
+    for (let i = 0; i < socialSciCatalog.length; i++) {
+        let opt = socialSciCatalog[i];
+        let el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        selectCourseSocialSci2.appendChild(el);
+    }
+    // ===================================
+
+
+
+
+
+
+    // ===================================
+    
 
 
 
