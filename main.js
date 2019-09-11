@@ -559,7 +559,79 @@ Populate English Dropdown Menus
     ===================================================================================================================================================
     ===================================================================================================================================================
     */
+
+
 })
+
+
+    // access dom elements of grades
+    // eng class 1
+    var classGradeEnglishClass1Sem1 = document.getElementById("classGradeEnglishClass1Sem1");
+    var classGradeEnglishClass1Sem2 = document.getElementById("classGradeEnglishClass1Sem2");
+
+    // eng class 2
+    var classGradeEnglishClass2Sem1 = document.getElementById("classGradeEnglishClass2Sem1");
+    var classGradeEnglishClass2Sem2 = document.getElementById("classGradeEnglishClass2Sem2");
+    // eng class 3
+    var classGradeEnglishClass3Sem1 = document.getElementById("classGradeEnglishClass3Sem1");
+    var classGradeEnglishClass3Sem2 = document.getElementById("classGradeEnglishClass3Sem2");
+    // eng class 4
+    var classGradeEnglishClass4Sem1 = document.getElementById("classGradeEnglishClass4Sem1");
+    var classGradeEnglishClass4Sem2 = document.getElementById("classGradeEnglishClass4Sem2");
+
+    // math class 1
+    var classGradeMathClass1Sem1 = document.getElementById("classGradeMathClass1Sem1");
+    var classGradeMathClass1Sem2 = document.getElementById("classGradeMathClass1Sem2");
+    // math class 2
+    var classGradeMathClass2Sem1 = document.getElementById("classGradeMathClass2Sem1");
+    var classGradeMathClass2Sem2 = document.getElementById("classGradeMathClass2Sem2");
+    // math class 3
+    var classGradeMathClass3Sem1 = document.getElementById("classGradeMathClass3Sem1");
+    var classGradeMathClass3Sem2 = document.getElementById("classGradeMathClass3Sem2");
+
+    // natural sci class 1
+    var classGradeNatSciClass1Sem1 = document.getElementById("classGradeNatSciClass1Sem1");
+    var classGradeNatSciClass1Sem2 = document.getElementById("classGradeNatSciClass1Sem2");
+    // natural sci class 2
+    var classGradeNatSciClass2Sem1 = document.getElementById("classGradeNatSciClass2Sem1");
+    var classGradeNatSciClass2Sem2 = document.getElementById("classGradeNatSciClass2Sem2");
+
+    // additional core courses
+    var classGradeAddCoreClass1Sem1 = document.getElementById("classGradeAddCoreClass1Sem1");
+    var classGradeAddCoreClass1Sem2 = document.getElementById("classGradeAddCoreClass1Sem2");
+
+    // social sci class 1
+    var classGradeSocSciClass1Sem1 = document.getElementById("classGradeSocSciClass1Sem1");
+    var classGradeSocSciClass1Sem2 = document.getElementById("classGradeSocSciClass1Sem2");
+    // social sci class 2
+    var classGradeSocSciClass2Sem1 = document.getElementById("classGradeSocSciClass2Sem1");
+    var classGradeSocSciClass2Sem2 = document.getElementById("classGradeSocSciClass2Sem2");
+
+    // any additional class 1
+    var classGradeAnyAddClass1Sem1 = document.getElementById("");
+    var classGradeAnyAddClass1Sem2 = document.getElementById("");
+    // any additional class 2
+    var classGradeAnyAddClass2Sem1 = document.getElementById("");
+    var classGradeAnyAddClass2Sem2 = document.getElementById("");
+    // any additional class 3
+    var classGradeAnyAddClass3Sem1 = document.getElementById("");
+    var classGradeAnyAddClass3Sem2 = document.getElementById("");
+    // any additional class 4
+    var classGradeAnyAddClass4Sem1 = document.getElementById("");
+    var classGradeAnyAddClass4Sem2 = document.getElementById("");
+
+
+
+
+var checkEligabilityBtn = document.getElementById('checkEligabilityBtn')
+
+checkEligabilityBtn.addEventListener("click", function() {
+    // perform computations
+})
+
+
+
+
 /*
 function checkEligability(sat, act, scisem1grds, scisem2grds,) {
     if (scisem1grds.length < 4 || scisem2grds.length < 4) {
