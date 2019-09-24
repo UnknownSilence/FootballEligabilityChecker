@@ -20,10 +20,6 @@ ACT/SAT matches gpa
 
 
 
-checkEligabilityBtn.addEventListener("click", function () {
-    // perform computations
-})
-
 
 
 
