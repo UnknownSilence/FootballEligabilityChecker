@@ -181,277 +181,58 @@ var additionalNonCoreCatalog = ["CULTURAL & LINGUISTIC TOPICS IN LATIN",
     "THEORY OF KNOWLEDGE IB+"
 ]
 
-
-// temporary on-load script execution
-window.addEventListener("load", function () {
-    // ....
-
-
-    /*
-===================================================================================================================================================
-===================================================================================================================================================
-===================================================================================================================================================
-===================================================================================================================================================
-===================================================================================================================================================
-===================================================================================================================================================
-===================================================================================================================================================
-===================================================================================================================================================
-===================================================================================================================================================
-===================================================================================================================================================
- 
-=======================================================================================
----------------------------------------------------------------------------------------
-Populate English Dropdown Menus
-=======================================================================================
----------------------------------------------------------------------------------------
-*/
-
-
-var englishdropdowns = document.getElementsByClassName("englishdropdowns")
-
-for (let dropdown of englishdropdowns) {
-    for (let i = 0; i < englishCatalog.length; i++) {
-        let opt = englishCatalog[i];
-        let el = document.createElement("option");
-        el.textContent = opt;
-        el.value = opt;
-        dropdown.appendChild(el);
+/**
+ * 
+ * @param dropdownName - Name of the HTML class to look through
+ * @param dropdownCatalog - Name of the array to pull data for dropdown population
+ * 
+ */
+function populateDropdowns(dropdownName, dropdownCatalog) {
+    for (let dropdown of dropdownName) {
+        for (let i = 0; i < dropdownCatalog.length; i++) {
+            let opt = dropdownCatalog[i];
+            let el = document.createElement("option");
+            el.textContent = opt;
+            el.value = opt;
+            dropdown.appendChild(el);
+        }
     }
 }
 
-
-    // ===================================
-    /*
-    =======================================================================================
-    ---------------------------------------------------------------------------------------
-    Populate Math Dropdown Menus
-    =======================================================================================
-    ---------------------------------------------------------------------------------------
-    */
-    // ===================================
-
+/**
+ * 
+ * Calling dropdown population functions with each unique parameter.
+ * 
+ * This fills the dropdown menus without having to manually code.
+ * 
+ */
+window.addEventListener("load", function () {
+    // -------------------------------------------------------------------
+    var englishdropdowns = document.getElementsByClassName("englishdropdowns")
+    populateDropdowns(englishdropdowns, englishCatalog)
+    // -------------------------------------------------------------------
     var mathdropdowns = document.getElementsByClassName("mathdropdowns")
-
-    for (let dropdown of mathdropdowns) {
-        for (let i = 0; i < mathCatalog.length; i++) {
-            let opt = mathCatalog[i];
-            let el = document.createElement("option");
-            el.textContent = opt;
-            el.value = opt;
-            dropdown.appendChild(el);
-        }
-    }
-  
-    // ===================================
-    /*
-    =======================================================================================
-    ---------------------------------------------------------------------------------------
-    Populate Science Dropdown Menus
-    =======================================================================================
-    ---------------------------------------------------------------------------------------
-    */
-    // ===================================
-
+    populateDropdowns(mathdropdowns, mathCatalog)
+    // -------------------------------------------------------------------
     var natsciencedropdowns = document.getElementsByClassName("natsciencedropdowns")
-
-    for (let dropdown of natsciencedropdowns) {
-        for (let i = 0; i < naturalSciCatalog.length; i++) {
-            let opt = naturalSciCatalog[i];
-            let el = document.createElement("option");
-            el.textContent = opt;
-            el.value = opt;
-            dropdown.appendChild(el);
-        }
-    }
-
-
-    // ===================================
-    /*
-    =======================================================================================
-    ---------------------------------------------------------------------------------------
-    Populate Additioanl Core Courses Dropdown Menus
-    =======================================================================================
-    ---------------------------------------------------------------------------------------
-    */
-    // ===================================
-
+    populateDropdowns(natsciencedropdowns, naturalSciCatalog)
+    // -------------------------------------------------------------------
     var additionalcoredropdowns = document.getElementsByClassName("additionalcoredropdowns")
-
-    for (let dropdown of additionalcoredropdowns) {
-        for (let i = 0; i < englishCatalog.length; i++) {
-            let opt = englishCatalog[i];
-            let el = document.createElement("option");
-            el.textContent = opt;
-            el.value = opt;
-            dropdown.appendChild(el);
-        }
-        for (let i = 0; i < mathCatalog.length; i++) {
-            let opt = mathCatalog[i];
-            let el = document.createElement("option");
-            el.textContent = opt;
-            el.value = opt;
-            dropdown.appendChild(el);
-        }
-        for (let i = 0; i < naturalSciCatalog.length; i++) {
-            let opt = naturalSciCatalog[i];
-            let el = document.createElement("option");
-            el.textContent = opt;
-            el.value = opt;
-            dropdown.appendChild(el);
-        }
-    }
-
-
-    // ===================================
-    /*
-    =======================================================================================
-    ---------------------------------------------------------------------------------------
-    Populate Social Science Dropdown Menus
-    =======================================================================================
-    ---------------------------------------------------------------------------------------
-    */
-    // ===================================
-
+    populateDropdowns(additionalcoredropdowns, englishCatalog)
+    populateDropdowns(additionalcoredropdowns, mathCatalog)
+    populateDropdowns(additionalcoredropdowns, naturalSciCatalog)
+    // -------------------------------------------------------------------
     var socialscidropdowns = document.getElementsByClassName("socialscidropdowns")
-
-    for (let dropdown of socialscidropdowns) {
-        for (let i = 0; i < socialSciCatalog.length; i++) {
-            let opt = socialSciCatalog[i];
-            let el = document.createElement("option");
-            el.textContent = opt;
-            el.value = opt;
-            dropdown.appendChild(el);
-        }
-    }
-
-
-    // ===================================
-    /*
-    =======================================================================================
-    ---------------------------------------------------------------------------------------
-    Populate Additioanl ANY Courses Dropdown Menus
-    =======================================================================================
-    ---------------------------------------------------------------------------------------
-    */
-    // ===================================
-
+    populateDropdowns(socialscidropdowns, socialSciCatalog)
+    // -------------------------------------------------------------------
     var additionalanydropdowns = document.getElementsByClassName("additionalanydropdowns")
-
-    for (let dropdown of additionalanydropdowns) {
-        for (let i = 0; i < additionalNonCoreCatalog.length; i++) {
-            let opt = additionalNonCoreCatalog[i];
-            let el = document.createElement("option");
-            el.textContent = opt;
-            el.value = opt;
-            dropdown.appendChild(el);
-        }
-        for (let i = 0; i < englishCatalog.length; i++) {
-            let opt = englishCatalog[i];
-            let el = document.createElement("option");
-            el.textContent = opt;
-            el.value = opt;
-            dropdown.appendChild(el);
-        }
-        for (let i = 0; i < mathCatalog.length; i++) {
-            let opt = mathCatalog[i];
-            let el = document.createElement("option");
-            el.textContent = opt;
-            el.value = opt;
-            dropdown.appendChild(el);
-        }
-        for (let i = 0; i < naturalSciCatalog.length; i++) {
-            let opt = naturalSciCatalog[i];
-            let el = document.createElement("option");
-            el.textContent = opt;
-            el.value = opt;
-            dropdown.appendChild(el);
-        }
-        for (let i = 0; i < socialSciCatalog.length; i++) {
-            let opt = socialSciCatalog[i];
-            let el = document.createElement("option");
-            el.textContent = opt;
-            el.value = opt;
-            dropdown.appendChild(el);
-        }
-    }
-
-    
-    
-    // ===================================
-    /*
-    ===================================================================================================================================================
-    ===================================================================================================================================================
-    ===================================================================================================================================================
-    ===================================================================================================================================================
-    ===================================================================================================================================================
-    ===================================================================================================================================================
-    ===================================================================================================================================================
-    ===================================================================================================================================================
-    ===================================================================================================================================================
-    ===================================================================================================================================================
-    */
-
-
+    populateDropdowns(additionalanydropdowns, additionalNonCoreCatalog)
+    populateDropdowns(additionalanydropdowns, englishCatalog)
+    populateDropdowns(additionalanydropdowns, mathCatalog)
+    populateDropdowns(additionalanydropdowns, naturalSciCatalog)
+    populateDropdowns(additionalanydropdowns, socialSciCatalog)
+    // -------------------------------------------------------------------    
 })
 
 
-// access dom elements of grades
-// eng class 1
-var classGradeEnglishClass1Sem1 = document.getElementById("classGradeEnglishClass1Sem1");
-var classGradeEnglishClass1Sem2 = document.getElementById("classGradeEnglishClass1Sem2");
 
-// eng class 2
-var classGradeEnglishClass2Sem1 = document.getElementById("classGradeEnglishClass2Sem1");
-var classGradeEnglishClass2Sem2 = document.getElementById("classGradeEnglishClass2Sem2");
-// eng class 3
-var classGradeEnglishClass3Sem1 = document.getElementById("classGradeEnglishClass3Sem1");
-var classGradeEnglishClass3Sem2 = document.getElementById("classGradeEnglishClass3Sem2");
-// eng class 4
-var classGradeEnglishClass4Sem1 = document.getElementById("classGradeEnglishClass4Sem1");
-var classGradeEnglishClass4Sem2 = document.getElementById("classGradeEnglishClass4Sem2");
-
-// math class 1
-var classGradeMathClass1Sem1 = document.getElementById("classGradeMathClass1Sem1");
-var classGradeMathClass1Sem2 = document.getElementById("classGradeMathClass1Sem2");
-// math class 2
-var classGradeMathClass2Sem1 = document.getElementById("classGradeMathClass2Sem1");
-var classGradeMathClass2Sem2 = document.getElementById("classGradeMathClass2Sem2");
-// math class 3
-var classGradeMathClass3Sem1 = document.getElementById("classGradeMathClass3Sem1");
-var classGradeMathClass3Sem2 = document.getElementById("classGradeMathClass3Sem2");
-
-// natural sci class 1
-var classGradeNatSciClass1Sem1 = document.getElementById("classGradeNatSciClass1Sem1");
-var classGradeNatSciClass1Sem2 = document.getElementById("classGradeNatSciClass1Sem2");
-// natural sci class 2
-var classGradeNatSciClass2Sem1 = document.getElementById("classGradeNatSciClass2Sem1");
-var classGradeNatSciClass2Sem2 = document.getElementById("classGradeNatSciClass2Sem2");
-
-// additional core courses
-var classGradeAddCoreClass1Sem1 = document.getElementById("classGradeAddCoreClass1Sem1");
-var classGradeAddCoreClass1Sem2 = document.getElementById("classGradeAddCoreClass1Sem2");
-
-// social sci class 1
-var classGradeSocSciClass1Sem1 = document.getElementById("classGradeSocSciClass1Sem1");
-var classGradeSocSciClass1Sem2 = document.getElementById("classGradeSocSciClass1Sem2");
-// social sci class 2
-var classGradeSocSciClass2Sem1 = document.getElementById("classGradeSocSciClass2Sem1");
-var classGradeSocSciClass2Sem2 = document.getElementById("classGradeSocSciClass2Sem2");
-
-// any additional class 1
-var classGradeAnyAddClass1Sem1 = document.getElementById("");
-var classGradeAnyAddClass1Sem2 = document.getElementById("");
-// any additional class 2
-var classGradeAnyAddClass2Sem1 = document.getElementById("");
-var classGradeAnyAddClass2Sem2 = document.getElementById("");
-// any additional class 3
-var classGradeAnyAddClass3Sem1 = document.getElementById("");
-var classGradeAnyAddClass3Sem2 = document.getElementById("");
-// any additional class 4
-var classGradeAnyAddClass4Sem1 = document.getElementById("");
-var classGradeAnyAddClass4Sem2 = document.getElementById("");
-
-
-
-
-var checkEligabilityBtn = document.getElementById('checkEligabilityBtn')

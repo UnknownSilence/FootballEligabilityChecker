@@ -17,7 +17,6 @@ function collectInputs(input, targetList) {
     targetList = inputList
     console.log(targetList)
 }
-
 /**
  * checkElig function - performs gpa calculations and comparisons to
  *  determine if the user meets NCAA critera.
@@ -38,12 +37,11 @@ function checkElig() {
          * 
          * 
          */
+
+        let type = weightList[i] + 1;
     }
-
 }
-
 var checkBtn = document.getElementById('checkEligabilityBtn');
-
 checkBtn.addEventListener("click",
     collectInputs("gradeInput", gradeList),
     collectInputs("weightInput", weightList),
