@@ -1,1 +1,1 @@
-# FootballEligabilityChecker
+# FootballEligibilityChecker
