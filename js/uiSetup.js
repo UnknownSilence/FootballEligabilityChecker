@@ -201,6 +201,127 @@ function populateDropdowns(dropdownName, dropdownCatalog) {
 
 /**
  * 
+ *          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="country">Course Name</label>
+              <select id="selectCourseEnglish4" class="custom-select d-block w-100 englishdropdowns" id="country"
+                required>
+                <option value="">Choose...</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid course.
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="state">Course Type</label>
+              <select class="custom-select d-block w-100 weightInput" id="state" required>
+                <option value="">Choose...</option>
+                <option>Regular</option>
+                <option>AP/Pre-AP/GT</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid state.
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="zip">Semester 1 Grade</label>
+              <input type="text" class="form-control gradeInput" id="zip" placeholder="" required>
+              <div class="invalid-feedback">
+
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="zip">Semester 2 Grade</label>
+              <input type="text" class="form-control gradeInput" id="zip" placeholder="" required>
+              <div class="invalid-feedback">
+
+              </div>
+            </div>
+          </div>
+ */
+
+function addFormField(target) {
+
+    let targetSection = document.getElementById(target)
+    /**
+     * <div class="row">
+     */
+    let rowDiv = document.createElement("div");
+    rowDiv.classList.add("row");
+    /**
+     *  <div class="col-md-6 mb-3">
+     */
+    let colDiv1 = document.createElement("div");
+    colDiv1.classList.add("col-md-6");
+    colDiv1.classList.add("mb-3");
+    /**
+     * <div class="col-md-4 mb-3">
+     */
+    let colDiv2 = document.createElement("div");
+    colDiv2.classList.add("col-md-4");
+    colDiv2.classList.add("mb-3");
+    /**
+     * <div class="col-md-4 mb-3">
+     */
+    let colDiv3 = document.createElement("div");
+    colDiv3.classList.add("col-md-4");
+    colDiv3.classList.add("mb-3");
+    /**
+     * <div class="col-md-4 mb-3">
+     */
+    let colDiv4 = document.createElement("div");
+    colDiv4.classList.add("col-md-4");
+    colDiv4.classList.add("mb-3");
+    /**
+     * <label for="country">Course Name</label>
+     */
+    let colDiv1Label = document.createElement("label")
+    colDiv1Label.textContent = "Course Name";
+
+    /** <select id="selectCourseEnglish4" class="custom-select d-block w-100 englishdropdowns" id="country 
+     * required> */
+
+    let colDiv1Select = document.createElement("select")
+    colDiv1Select.classList.add("custom-select", "d-block", "w-100") // dropdown classes will go here later
+
+
+
+
+
+
+    /**
+     * <label for="state">Course Type</label>
+     */
+    let colDiv2Label = document.createElement("label")
+    colDiv2Label.textContent = "Course Type";
+
+
+
+    /**
+     * <hr class="mb-4">
+     */
+    let divider = document.createElement("hr")
+    divider.classList.add("mb-4")
+    targetSection.appendChild(divider)
+    targetSection.appendChild(rowDiv)
+    colDiv1.appendChild(colDiv1Label)
+    colDiv1.appendChild(colDiv1Select)
+    targetSection.appendChild(colDiv1)
+    colDiv2.appendChild(colDiv2Label)
+    targetSection.appendChild(colDiv2)
+    targetSection.appendChild(colDiv3)
+    targetSection.appendChild(colDiv4)
+
+
+
+
+
+}
+
+
+
+/**
+ * 
  * Calling dropdown population functions with each unique parameter.
  * 
  * This fills the dropdown menus without having to manually code.
@@ -232,7 +353,13 @@ window.addEventListener("load", function () {
     populateDropdowns(additionalanydropdowns, naturalSciCatalog)
     populateDropdowns(additionalanydropdowns, socialSciCatalog)
     // -------------------------------------------------------------------    
+    //var addMoreBtns = document.getElementsByClassName("addMoreBtns")
+
+    var englishSectionAddBtn = document.getElementById("englishSectionAddBtn")
+    /**
+     for (eachBtn in addMoreBtns) {
+        eachBtn.addEventListener("click", addFormField("englishFormSection"))
+    }
+    **/
+    englishSectionAddBtn.addEventListener("click", addFormField("englishFormSection"));
 })
-
-
-
