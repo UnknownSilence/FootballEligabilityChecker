@@ -185,126 +185,133 @@
         </div>
 
 
-        <button type="button" id="englishSectionAddBtn" class="addMoreBtns btn btn-secondary btn-xl btn-block">Add</button>
+        <button type="button" id="englishSectionAddBtn"
+          class="addMoreBtns btn btn-secondary btn-xl btn-block">Add</button>
 
         <hr class="mb-12">
-        <div class="row">
-          <h3 class="d-flex justify">Math Courses</h3>
+        <div id="mathFormSection" class="mathFormSection">
+          <div class="row">
+            <h3 class="d-flex justify">Math Courses</h3>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="country">Course Name</label>
+              <select id="selectCourseMath1" class="custom-select d-block w-100 mathdropdowns" id="country" required>
+                <option value="">Choose...</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid course.
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="state">Course Type</label>
+              <select class="custom-select d-block w-100 weightInput" id="state" required>
+                <option value="">Choose...</option>
+                <option>Regular</option>
+                <option>AP/Pre-AP/GT</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid state.
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="zip">Semester 1 Grade</label>
+              <input type="text" class="form-control gradeInput" id="zip" placeholder="" required>
+              <div class="invalid-feedback">
+
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="zip">Semester 2 Grade</label>
+              <input type="text" class="form-control gradeInput" id="zip" placeholder="" required>
+              <div class="invalid-feedback">
+
+              </div>
+            </div>
+          </div>
+
+          <hr class="mb-4">
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="country">Course Name</label>
+              <select id="selectCourseMath2" class="custom-select d-block w-100 mathdropdowns" id="country" required>
+                <option value="">Choose...</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid course.
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="state">Course Type</label>
+              <select class="custom-select d-block w-100 weightInput" id="state" required>
+                <option value="">Choose...</option>
+                <option>Regular</option>
+                <option>AP/Pre-AP/GT</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid state.
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="zip">Semester 1 Grade</label>
+              <input type="text" class="form-control gradeInput" id="zip" placeholder="" required>
+              <div class="invalid-feedback">
+
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="zip">Semester 2 Grade</label>
+              <input type="text" class="form-control gradeInput" id="zip" placeholder="" required>
+              <div class="invalid-feedback">
+
+              </div>
+            </div>
+          </div>
+
+          <hr class="mb-4">
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="country">Course Name</label>
+              <select id="selectCourseMath3" class="custom-select d-block w-100 mathdropdowns" id="country" required>
+                <option value="">Choose...</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid course.
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="state">Course Type</label>
+              <select class="custom-select d-block w-100 weightInput" id="state" required>
+                <option value="">Choose...</option>
+                <option>Regular</option>
+                <option>AP/Pre-AP/GT</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid state.
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="zip">Semester 1 Grade</label>
+              <input type="text" class="form-control gradeInput" id="zip" placeholder="" required>
+              <div class="invalid-feedback">
+
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="zip">Semester 2 Grade</label>
+              <input type="text" class="form-control gradeInput" id="zip" placeholder="" required>
+              <div class="invalid-feedback">
+
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="country">Course Name</label>
-            <select id="selectCourseMath1" class="custom-select d-block w-100 mathdropdowns" id="country" required>
-              <option value="">Choose...</option>
-            </select>
-            <div class="invalid-feedback">
-              Please select a valid course.
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="state">Course Type</label>
-            <select class="custom-select d-block w-100 weightInput" id="state" required>
-              <option value="">Choose...</option>
-              <option>Regular</option>
-              <option>AP/Pre-AP/GT</option>
-            </select>
-            <div class="invalid-feedback">
-              Please provide a valid state.
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="zip">Semester 1 Grade</label>
-            <input type="text" class="form-control gradeInput" id="zip" placeholder="" required>
-            <div class="invalid-feedback">
 
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="zip">Semester 2 Grade</label>
-            <input type="text" class="form-control gradeInput" id="zip" placeholder="" required>
-            <div class="invalid-feedback">
-
-            </div>
-          </div>
-        </div>
-
-        <hr class="mb-4">
-
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="country">Course Name</label>
-            <select id="selectCourseMath2" class="custom-select d-block w-100 mathdropdowns" id="country" required>
-              <option value="">Choose...</option>
-            </select>
-            <div class="invalid-feedback">
-              Please select a valid course.
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="state">Course Type</label>
-            <select class="custom-select d-block w-100 weightInput" id="state" required>
-              <option value="">Choose...</option>
-              <option>Regular</option>
-              <option>AP/Pre-AP/GT</option>
-            </select>
-            <div class="invalid-feedback">
-              Please provide a valid state.
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="zip">Semester 1 Grade</label>
-            <input type="text" class="form-control gradeInput" id="zip" placeholder="" required>
-            <div class="invalid-feedback">
-
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="zip">Semester 2 Grade</label>
-            <input type="text" class="form-control gradeInput" id="zip" placeholder="" required>
-            <div class="invalid-feedback">
-
-            </div>
-          </div>
-        </div>
-
-        <hr class="mb-4">
-
-        <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="country">Course Name</label>
-            <select id="selectCourseMath3" class="custom-select d-block w-100 mathdropdowns" id="country" required>
-              <option value="">Choose...</option>
-            </select>
-            <div class="invalid-feedback">
-              Please select a valid course.
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="state">Course Type</label>
-            <select class="custom-select d-block w-100 weightInput" id="state" required>
-              <option value="">Choose...</option>
-              <option>Regular</option>
-              <option>AP/Pre-AP/GT</option>
-            </select>
-            <div class="invalid-feedback">
-              Please provide a valid state.
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="zip">Semester 1 Grade</label>
-            <input type="text" class="form-control gradeInput" id="zip" placeholder="" required>
-            <div class="invalid-feedback">
-
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="zip">Semester 2 Grade</label>
-            <input type="text" class="form-control gradeInput" id="zip" placeholder="" required>
-            <div class="invalid-feedback">
-
-            </div>
-          </div>
-        </div>
+        
+        <button type="button" id="mathSectionAddBtn"
+          class="addMoreBtns btn btn-secondary btn-xl btn-block">Add</button>
 
         <hr class="mb-12">
         <div class="row">
