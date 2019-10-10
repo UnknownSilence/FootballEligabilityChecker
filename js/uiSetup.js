@@ -454,8 +454,8 @@ socialSciSectionAddBtn.addEventListener("click", function () {
 }, false);
 
 additionalAnySectionAddBtn.addEventListener("click", function () {
-  addFormField("additionalAnyFormSection", "additionalanydropdowns"),
-    populateDropdowns(additionalanydropdowns, additionalNonCoreCatalog)
+  addFormField("additionalAnyFormSection", "additionalanydropdowns")
+  populateDropdowns(additionalanydropdowns, additionalNonCoreCatalog)
   populateDropdowns(additionalanydropdowns, englishCatalog)
   populateDropdowns(additionalanydropdowns, mathCatalog)
   populateDropdowns(additionalanydropdowns, naturalSciCatalog)
