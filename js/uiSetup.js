@@ -199,6 +199,9 @@ function populateDropdowns(dropdownName, dropdownCatalog) {
   }
 }
 
+
+
+
 /**
  * 
  *          <div class="row">
@@ -272,6 +275,9 @@ function addFormField(target, dropType) {
   let colDiv4 = document.createElement("div");
   colDiv4.classList.add("col-md-4");
   colDiv4.classList.add("mb-3");
+
+  let colDiv5 = document.createElement("div");
+  colDiv4.classList.add("col-md-4");
   /**
    * <label for="country">Course Name</label>
    */
@@ -303,10 +309,16 @@ function addFormField(target, dropType) {
    */
   let colDiv2Select = document.createElement("select")
   colDiv2Select.classList.add("custom-select", "d-block", "w=100", "weightInput")
-  let ColDiv2SelectOption = document.createElement("option")
-  ColDiv2SelectOption.value = ""
-  ColDiv2SelectOption.textContent = "Choose..."
-  colDiv2Select.appendChild(ColDiv2SelectOption)
+  let ColDiv2SelectOptionChoose = document.createElement("option")
+  ColDiv2SelectOptionChoose.value = ""
+  ColDiv2SelectOptionChoose.textContent = "Choose..."
+  let ColDiv2SelectOptionRegs = document.createElement("option")
+  ColDiv2SelectOptionRegs.textContent = "Regular"
+  let ColDiv2SelectOptionAP = document.createElement("option")
+  ColDiv2SelectOptionAP.textContent = "AP/Pre-AP/GT"
+  colDiv2Select.appendChild(ColDiv2SelectOptionChoose)
+  colDiv2Select.appendChild(ColDiv2SelectOptionRegs)
+  colDiv2Select.appendChild(ColDiv2SelectOptionAP)
 
 
   /**
@@ -345,6 +357,10 @@ function addFormField(target, dropType) {
   let divider = document.createElement("hr")
   divider.classList.add("mb-4")
 
+  let delBtn = document.createElement("button")
+  delBtn.classList.add("addMoreBtns", "btn", "btn-danger", "btm-sm", "btn-block", "deleteFieldBtn")
+  delBtn.innerText = "Remove"
+
 
 
   targetSection.append(divider)
@@ -361,12 +377,11 @@ function addFormField(target, dropType) {
   colDiv4.appendChild(colDiv4Label)
   colDiv4.appendChild(colDiv4Input)
   rowDiv.appendChild(colDiv4)
-
-
-
-
-
+  colDiv5.appendChild(delBtn)
+  rowDiv.appendChild(colDiv5)
 }
+
+
 
 
 
@@ -377,26 +392,23 @@ function addFormField(target, dropType) {
  * This fills the dropdown menus without having to manually code.
  * 
  */
+
+var englishdropdowns = document.getElementsByClassName("englishdropdowns")
+var mathdropdowns = document.getElementsByClassName("mathdropdowns")
+var natsciencedropdowns = document.getElementsByClassName("natsciencedropdowns")
+var socialscidropdowns = document.getElementsByClassName("socialscidropdowns")
+var additionalanydropdowns = document.getElementsByClassName("additionalanydropdowns")
+
 window.addEventListener("load", function () {
   // -------------------------------------------------------------------
-  var englishdropdowns = document.getElementsByClassName("englishdropdowns")
   populateDropdowns(englishdropdowns, englishCatalog)
   // -------------------------------------------------------------------
-  var mathdropdowns = document.getElementsByClassName("mathdropdowns")
   populateDropdowns(mathdropdowns, mathCatalog)
   // -------------------------------------------------------------------
-  var natsciencedropdowns = document.getElementsByClassName("natsciencedropdowns")
   populateDropdowns(natsciencedropdowns, naturalSciCatalog)
   // -------------------------------------------------------------------
-  var additionalcoredropdowns = document.getElementsByClassName("additionalcoredropdowns")
-  populateDropdowns(additionalcoredropdowns, englishCatalog)
-  populateDropdowns(additionalcoredropdowns, mathCatalog)
-  populateDropdowns(additionalcoredropdowns, naturalSciCatalog)
-  // -------------------------------------------------------------------
-  var socialscidropdowns = document.getElementsByClassName("socialscidropdowns")
   populateDropdowns(socialscidropdowns, socialSciCatalog)
   // -------------------------------------------------------------------
-  var additionalanydropdowns = document.getElementsByClassName("additionalanydropdowns")
   populateDropdowns(additionalanydropdowns, additionalNonCoreCatalog)
   populateDropdowns(additionalanydropdowns, englishCatalog)
   populateDropdowns(additionalanydropdowns, mathCatalog)
@@ -410,9 +422,42 @@ window.addEventListener("load", function () {
       eachBtn.addEventListener("click", addFormField("englishFormSection"))
   }
   **/
+
+
 })
 var englishSectionAddBtn = document.getElementById("englishSectionAddBtn")
+var mathSectionAddBtn = document.getElementById("mathSectionAddBtn")
+var natSciSectionAddBtn = document.getElementById("natSciSectionAddBtn");
+var socialSciSectionAddBtn = document.getElementById("socialSciSectionAddBtn")
+var additionalAnySectionAddBtn = document.getElementById("additionalAnySectionAddBtn")
 
 englishSectionAddBtn.addEventListener("click", function () {
   addFormField("englishFormSection", "englishdropdowns")
+  populateDropdowns(englishdropdowns, englishCatalog)
+
+}, false);
+
+mathSectionAddBtn.addEventListener("click", function () {
+  addFormField("mathFormSection", "mathdropdowns")
+  populateDropdowns(mathdropdowns, mathCatalog)
+}, false);
+
+
+natSciSectionAddBtn.addEventListener("click", function () {
+  addFormField("natSciFormSection", "natsciencedropdowns"),
+    populateDropdowns(natsciencedropdowns, naturalSciCatalog)
+}, false);
+
+socialSciSectionAddBtn.addEventListener("click", function () {
+  addFormField("socialSciFormSection", "socialscidropdowns"),
+    populateDropdowns(socialscidropdowns, socialSciCatalog)
+}, false);
+
+additionalAnySectionAddBtn.addEventListener("click", function () {
+  addFormField("additionalAnyFormSection", "additionalanydropdowns"),
+    populateDropdowns(additionalanydropdowns, additionalNonCoreCatalog)
+  populateDropdowns(additionalanydropdowns, englishCatalog)
+  populateDropdowns(additionalanydropdowns, mathCatalog)
+  populateDropdowns(additionalanydropdowns, naturalSciCatalog)
+  populateDropdowns(additionalanydropdowns, socialSciCatalog)
 }, false);

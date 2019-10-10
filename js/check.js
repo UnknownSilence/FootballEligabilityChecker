@@ -12,16 +12,17 @@ var gpa;
 
 var checkBtn = document.getElementById('checkEligibilityBtn');
 
-checkBtn.addEventListener("click", computeInput)
+//checkBtn.addEventListener("click", computeInput)
 
 
-
+/**
 function computeInput() {
     collectInputs("gradeInput", gradeList);
     collectInputs("weightInput", weightList);
     checkElig();
     console.log("Input computed")
 }
+ **/
 
 function collectInputs(input, targetList) {
     var inputs = document.getElementsByClassName(input)
