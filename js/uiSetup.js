@@ -181,6 +181,10 @@ var additionalNonCoreCatalog = ["CULTURAL & LINGUISTIC TOPICS IN LATIN",
   "THEORY OF KNOWLEDGE IB+"
 ]
 
+function delete_row(e) {
+  e.parentNode.parentNode.parentNode.removeChild(e.parentNode.parentNode);
+}
+
 /**
  * 
  * @param dropdownName - Name of the HTML class to look through
@@ -250,7 +254,7 @@ function addFormField(target, dropType) {
    * <div class="row">
    */
   let rowDiv = document.createElement("div");
-  rowDiv.classList.add("row", "dynamic-generated-row");
+  rowDiv.classList.add("row", "dynamic-generated-row", target + "Row");
   /**
    *  <div class="col-md-6 mb-3">
    */
@@ -379,6 +383,16 @@ function addFormField(target, dropType) {
   rowDiv.appendChild(colDiv4)
   colDiv5.appendChild(delBtn)
   rowDiv.appendChild(colDiv5)
+
+
+  var selfDeleteBtns = document.getElementsByClassName("deleteFieldBtn")
+
+  for (let btn of selfDeleteBtns) {
+    btn.addEventListener("click", function () {
+      delete_row(btn)
+      targetSection.removeChild(divider)
+    })
+  }
 }
 
 
@@ -444,13 +458,13 @@ mathSectionAddBtn.addEventListener("click", function () {
 
 
 natSciSectionAddBtn.addEventListener("click", function () {
-  addFormField("natSciFormSection", "natsciencedropdowns"),
-    populateDropdowns(natsciencedropdowns, naturalSciCatalog)
+  addFormField("natSciFormSection", "natsciencedropdowns")
+  populateDropdowns(natsciencedropdowns, naturalSciCatalog)
 }, false);
 
 socialSciSectionAddBtn.addEventListener("click", function () {
-  addFormField("socialSciFormSection", "socialscidropdowns"),
-    populateDropdowns(socialscidropdowns, socialSciCatalog)
+  addFormField("socialSciFormSection", "socialscidropdowns")
+  populateDropdowns(socialscidropdowns, socialSciCatalog)
 }, false);
 
 additionalAnySectionAddBtn.addEventListener("click", function () {
@@ -461,3 +475,22 @@ additionalAnySectionAddBtn.addEventListener("click", function () {
   populateDropdowns(additionalanydropdowns, naturalSciCatalog)
   populateDropdowns(additionalanydropdowns, socialSciCatalog)
 }, false);
+
+
+
+var myVar = setInterval(checkForms, 1000);
+
+function checkForms() {
+  let englishrows = document.getElementsByClassName("englishFormSectionRow")
+  for (x of englishrows) {
+    if (x.hasChildNodes()) {
+      var children = x.childNodes;
+
+      for (var i = 0; i < children.length; i++) {
+        console.log(children[i].childNodes)
+        // do something with each child as children[i]
+        // NOTE: List is live, adding or removing children will change the list
+      }
+    }
+  }
+}
